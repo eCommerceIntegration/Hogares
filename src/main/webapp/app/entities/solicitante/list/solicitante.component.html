@@ -1,0 +1,96 @@
+<div>
+  <h2 id="page-heading" data-cy="SolicitanteHeading">
+    <span jhiTranslate="hogaresApp.solicitante.home.title">Solicitantes</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="loadAll()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="hogaresApp.solicitante.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-solicitante"
+        [routerLink]="['/solicitante/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="hogaresApp.solicitante.home.createLabel"> Create a new Solicitante </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="solicitantes?.length === 0">
+    <span jhiTranslate="hogaresApp.solicitante.home.notFound">No solicitantes found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="solicitantes && solicitantes.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr>
+          <th scope="col"><span jhiTranslate="global.field.id">ID</span></th>
+          <th scope="col"><span jhiTranslate="hogaresApp.solicitante.firstName">First Name</span></th>
+          <th scope="col"><span jhiTranslate="hogaresApp.solicitante.lastName">Last Name</span></th>
+          <th scope="col"><span jhiTranslate="hogaresApp.solicitante.email">Email</span></th>
+          <th scope="col"><span jhiTranslate="hogaresApp.solicitante.phoneNumber">Phone Number</span></th>
+          <th scope="col"><span jhiTranslate="hogaresApp.solicitante.hireDate">Hire Date</span></th>
+          <th scope="col"><span jhiTranslate="hogaresApp.solicitante.salary">Salary</span></th>
+          <th scope="col"><span jhiTranslate="hogaresApp.solicitante.commissionPct">Commission Pct</span></th>
+          <th scope="col"><span jhiTranslate="hogaresApp.solicitante.hogar">Hogar</span></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let solicitante of solicitantes; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/solicitante', solicitante.id, 'view']">{{ solicitante.id }}</a>
+          </td>
+          <td>{{ solicitante.firstName }}</td>
+          <td>{{ solicitante.lastName }}</td>
+          <td>{{ solicitante.email }}</td>
+          <td>{{ solicitante.phoneNumber }}</td>
+          <td>{{ solicitante.hireDate | formatMediumDatetime }}</td>
+          <td>{{ solicitante.salary }}</td>
+          <td>{{ solicitante.commissionPct }}</td>
+          <td>
+            <div *ngIf="solicitante.hogar">
+              <a [routerLink]="['/hogar', solicitante.hogar?.id, 'view']">{{ solicitante.hogar?.id }}</a>
+            </div>
+          </td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/solicitante', solicitante.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/solicitante', solicitante.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(solicitante)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

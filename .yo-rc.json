@@ -42,7 +42,9 @@
     "devServerPort": 4200,
     "clientTheme": "none",
     "clientThemeVariant": "",
-    "reactive": false
+    "reactive": false,
+    "entities": ["Hogar", "Empleado", "Location", "Solicitante", "Trabajo", "Task", "Region", "Pais", "Servicio", "Accion"],
+    "lastLiquibaseTimestamp": 1626031517000
   },
   "git-provider": "GitHub",
   "git-company": "eCommerceIntegration",
