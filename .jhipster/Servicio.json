@@ -1,0 +1,41 @@
+{
+  "name": "Servicio",
+  "fields": [
+    {
+      "fieldName": "servicioTitle",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "minSalary",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "maxSalary",
+      "fieldType": "Long"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "accion",
+      "otherEntityRelationshipName": "servicio",
+      "relationshipName": "accion"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "solicitante",
+      "otherEntityRelationshipName": "servicio",
+      "relationshipName": "solicitante"
+    }
+  ],
+  "entityTableName": "servicio",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210711192539"
+}

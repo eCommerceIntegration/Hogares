@@ -7,6 +7,16 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entidades",
+        "hogar": "Hogar",
+        "empleado": "Empleado",
+        "location": "Location",
+        "solicitante": "Solicitante",
+        "trabajo": "Trabajo",
+        "task": "Task",
+        "region": "Region",
+        "pais": "Pais",
+        "servicio": "Servicio",
+        "accion": "Accion",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

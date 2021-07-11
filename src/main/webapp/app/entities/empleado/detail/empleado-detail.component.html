@@ -1,0 +1,66 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="empleado">
+      <h2 data-cy="empleadoDetailsHeading"><span jhiTranslate="hogaresApp.empleado.detail.title">Empleado</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ empleado.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="hogaresApp.empleado.empleadoId">Empleado Id</span></dt>
+        <dd>
+          <span>{{ empleado.empleadoId }}</span>
+        </dd>
+        <dt><span jhiTranslate="hogaresApp.empleado.firstName">First Name</span></dt>
+        <dd>
+          <span>{{ empleado.firstName }}</span>
+        </dd>
+        <dt><span jhiTranslate="hogaresApp.empleado.lastName">Last Name</span></dt>
+        <dd>
+          <span>{{ empleado.lastName }}</span>
+        </dd>
+        <dt><span jhiTranslate="hogaresApp.empleado.email">Email</span></dt>
+        <dd>
+          <span>{{ empleado.email }}</span>
+        </dd>
+        <dt><span jhiTranslate="hogaresApp.empleado.phoneNumber">Phone Number</span></dt>
+        <dd>
+          <span>{{ empleado.phoneNumber }}</span>
+        </dd>
+        <dt><span jhiTranslate="hogaresApp.empleado.hireDate">Hire Date</span></dt>
+        <dd>
+          <span>{{ empleado.hireDate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="hogaresApp.empleado.salary">Salary</span></dt>
+        <dd>
+          <span>{{ empleado.salary }}</span>
+        </dd>
+        <dt><span jhiTranslate="hogaresApp.empleado.commissionPct">Commission Pct</span></dt>
+        <dd>
+          <span>{{ empleado.commissionPct }}</span>
+        </dd>
+        <dt><span jhiTranslate="hogaresApp.empleado.hogar">Hogar</span></dt>
+        <dd>
+          <div *ngIf="empleado.hogar">
+            <a [routerLink]="['/hogar', empleado.hogar?.id, 'view']">{{ empleado.hogar?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/empleado', empleado.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

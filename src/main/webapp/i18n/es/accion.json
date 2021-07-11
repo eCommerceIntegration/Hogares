@@ -1,0 +1,26 @@
+{
+  "hogaresApp": {
+    "accion": {
+      "home": {
+        "title": "Accions",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Accion",
+        "createOrEditLabel": "Crear o editar Accion",
+        "notFound": "Ningún Accions encontrado"
+      },
+      "created": "Un nuevo Accion ha sido creado con el identificador {{ param }}",
+      "updated": "Un Accion ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Accion ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Accion {{ id }}?"
+      },
+      "detail": {
+        "title": "Accion"
+      },
+      "id": "ID",
+      "title": "Title",
+      "description": "Description",
+      "servicio": "Servicio"
+    }
+  }
+}

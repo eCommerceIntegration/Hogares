@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="trabajo">
+      <h2 data-cy="trabajoDetailsHeading"><span jhiTranslate="hogaresApp.trabajo.detail.title">Trabajo</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ trabajo.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="hogaresApp.trabajo.trabajoTitle">Trabajo Title</span></dt>
+        <dd>
+          <span>{{ trabajo.trabajoTitle }}</span>
+        </dd>
+        <dt><span jhiTranslate="hogaresApp.trabajo.minSalary">Min Salary</span></dt>
+        <dd>
+          <span>{{ trabajo.minSalary }}</span>
+        </dd>
+        <dt><span jhiTranslate="hogaresApp.trabajo.maxSalary">Max Salary</span></dt>
+        <dd>
+          <span>{{ trabajo.maxSalary }}</span>
+        </dd>
+        <dt><span jhiTranslate="hogaresApp.trabajo.empleado">Empleado</span></dt>
+        <dd>
+          <div *ngIf="trabajo.empleado">
+            <a [routerLink]="['/empleado', trabajo.empleado?.id, 'view']">{{ trabajo.empleado?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/trabajo', trabajo.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
