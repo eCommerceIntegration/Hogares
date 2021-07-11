@@ -1,0 +1,28 @@
+{
+  "hogaresApp": {
+    "hogar": {
+      "home": {
+        "title": "Hogars",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Hogar",
+        "createOrEditLabel": "Crear o editar Hogar",
+        "notFound": "Ningún Hogars encontrado"
+      },
+      "created": "Un nuevo Hogar ha sido creado con el identificador {{ param }}",
+      "updated": "Un Hogar ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Hogar ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Hogar {{ id }}?"
+      },
+      "detail": {
+        "title": "Hogar"
+      },
+      "id": "ID",
+      "hogarName": "Hogar Name",
+      "language": "Language",
+      "empleado": "Empleado",
+      "location": "Location",
+      "solicitante": "Solicitante"
+    }
+  }
+}
