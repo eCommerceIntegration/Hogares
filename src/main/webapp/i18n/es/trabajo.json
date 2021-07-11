@@ -1,0 +1,28 @@
+{
+  "hogaresApp": {
+    "trabajo": {
+      "home": {
+        "title": "Trabajos",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Trabajo",
+        "createOrEditLabel": "Crear o editar Trabajo",
+        "notFound": "Ningún Trabajos encontrado"
+      },
+      "created": "Un nuevo Trabajo ha sido creado con el identificador {{ param }}",
+      "updated": "Un Trabajo ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Trabajo ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Trabajo {{ id }}?"
+      },
+      "detail": {
+        "title": "Trabajo"
+      },
+      "id": "ID",
+      "trabajoTitle": "Trabajo Title",
+      "minSalary": "Min Salary",
+      "maxSalary": "Max Salary",
+      "task": "Task",
+      "empleado": "Empleado"
+    }
+  }
+}

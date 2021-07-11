@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="accion">
+      <h2 data-cy="accionDetailsHeading"><span jhiTranslate="hogaresApp.accion.detail.title">Accion</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ accion.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="hogaresApp.accion.title">Title</span></dt>
+        <dd>
+          <span>{{ accion.title }}</span>
+        </dd>
+        <dt><span jhiTranslate="hogaresApp.accion.description">Description</span></dt>
+        <dd>
+          <span>{{ accion.description }}</span>
+        </dd>
+        <dt><span jhiTranslate="hogaresApp.accion.servicio">Servicio</span></dt>
+        <dd>
+          <div *ngIf="accion.servicio">
+            <a [routerLink]="['/servicio', accion.servicio?.id, 'view']">{{ accion.servicio?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/accion', accion.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="solicitante">
+      <h2 data-cy="solicitanteDetailsHeading"><span jhiTranslate="hogaresApp.solicitante.detail.title">Solicitante</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ solicitante.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="hogaresApp.solicitante.firstName">First Name</span></dt>
+        <dd>
+          <span>{{ solicitante.firstName }}</span>
+        </dd>
+        <dt><span jhiTranslate="hogaresApp.solicitante.lastName">Last Name</span></dt>
+        <dd>
+          <span>{{ solicitante.lastName }}</span>
+        </dd>
+        <dt><span jhiTranslate="hogaresApp.solicitante.email">Email</span></dt>
+        <dd>
+          <span>{{ solicitante.email }}</span>
+        </dd>
+        <dt><span jhiTranslate="hogaresApp.solicitante.phoneNumber">Phone Number</span></dt>
+        <dd>
+          <span>{{ solicitante.phoneNumber }}</span>
+        </dd>
+        <dt><span jhiTranslate="hogaresApp.solicitante.hireDate">Hire Date</span></dt>
+        <dd>
+          <span>{{ solicitante.hireDate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="hogaresApp.solicitante.salary">Salary</span></dt>
+        <dd>
+          <span>{{ solicitante.salary }}</span>
+        </dd>
+        <dt><span jhiTranslate="hogaresApp.solicitante.commissionPct">Commission Pct</span></dt>
+        <dd>
+          <span>{{ solicitante.commissionPct }}</span>
+        </dd>
+        <dt><span jhiTranslate="hogaresApp.solicitante.hogar">Hogar</span></dt>
+        <dd>
+          <div *ngIf="solicitante.hogar">
+            <a [routerLink]="['/hogar', solicitante.hogar?.id, 'view']">{{ solicitante.hogar?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/solicitante', solicitante.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

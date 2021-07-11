@@ -1,0 +1,32 @@
+{
+  "hogaresApp": {
+    "solicitante": {
+      "home": {
+        "title": "Solicitantes",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Solicitante",
+        "createOrEditLabel": "Crear o editar Solicitante",
+        "notFound": "Ningún Solicitantes encontrado"
+      },
+      "created": "Un nuevo Solicitante ha sido creado con el identificador {{ param }}",
+      "updated": "Un Solicitante ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Solicitante ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Solicitante {{ id }}?"
+      },
+      "detail": {
+        "title": "Solicitante"
+      },
+      "id": "ID",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phoneNumber": "Phone Number",
+      "hireDate": "Hire Date",
+      "salary": "Salary",
+      "commissionPct": "Commission Pct",
+      "servicio": "Servicio",
+      "hogar": "Hogar"
+    }
+  }
+}

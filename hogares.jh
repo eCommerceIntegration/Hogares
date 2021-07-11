@@ -1,0 +1,85 @@
+// an ignored comment 
+/** not an ignored comment */
+entity Hogar {
+	HogarName String required,
+		language Language}
+        
+entity Empleado {
+	empleadoId String,
+    firstName String,
+	lastName String,
+	email String,
+	phoneNumber String,
+	hireDate Instant,
+	salary Long,
+	commissionPct Long }
+    
+entity Location {
+	streetAddress String,
+	postalCode String,
+	city String,
+	stateProvince String }
+
+entity Solicitante {
+	firstName String,
+	lastName String,
+	email String,
+	phoneNumber String,
+	hireDate Instant,
+	salary Long,
+	commissionPct Long }
+    
+entity Trabajo {
+	TrabajoTitle String,
+	minSalary Long,
+	maxSalary Long }
+
+entity Task {
+	title String,
+	description String }
+
+entity Region {regionName String}
+entity Pais { PaisName String }
+
+entity Servicio {
+	ServicioTitle String,
+	minSalary Long,
+	maxSalary Long }
+
+entity Accion {
+	title String,
+	description String }
+
+enum Language {
+    PORTUGUES, ENGLISH, SPANISH }
+// Relaciones Main 
+/** Relaciones Main */    
+relationship OneToMany {
+	Hogar 
+    to Empleado }
+relationship OneToMany {
+    Hogar 
+    to Location }
+    
+relationship OneToMany {
+	Hogar 
+	to Solicitante }        
+   
+    
+relationship OneToMany {
+	Empleado 
+    to Trabajo }
+relationship OneToMany {
+	Location to Region,
+    Region to Pais }
+    
+relationship OneToMany {
+	Trabajo
+    to Task }
+
+relationship OneToMany {
+	Solicitante 
+  to Servicio }    
+relationship OneToMany {
+	Servicio 
+    to Accion }

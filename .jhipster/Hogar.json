@@ -1,0 +1,46 @@
+{
+  "name": "Hogar",
+  "fields": [
+    {
+      "fieldName": "hogarName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "language",
+      "fieldType": "Language",
+      "fieldValues": "PORTUGUES,ENGLISH,SPANISH"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "empleado",
+      "otherEntityRelationshipName": "hogar",
+      "relationshipName": "empleado"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "location",
+      "otherEntityRelationshipName": "hogar",
+      "relationshipName": "location"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "solicitante",
+      "otherEntityRelationshipName": "hogar",
+      "relationshipName": "solicitante"
+    }
+  ],
+  "javadoc": "not an ignored comment",
+  "entityTableName": "hogar",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210711192531"
+}
